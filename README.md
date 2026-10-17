@@ -1,13 +1,14 @@
-# Hierholzer Algorithm Lab
+# Hierholzer's Algorithm — Streamlit
 
-Streamlit app for Euler paths/circuits.
+This keeps the existing app layout, Euler validation, Hierholzer steps, and graph summary, adding click-based graph editing.
 
 ## Deploy
 1. Upload `streamlit_app.py`, `requirements.txt`, and `README.md` to the repository root.
-2. Set Streamlit Cloud Main file path to `streamlit_app.py`.
+2. In Streamlit Community Cloud, set **Main file path** to `streamlit_app.py`.
 3. Reboot the app.
 
-## Graph editor
-- In `เพิ่มจุดยอด` mode, click empty canvas space to add A, B, C, ... Z.
-- In `สร้างเส้นเชื่อม` mode, click two different vertices to connect them. Parallel edges are supported. Self-loops are not supported.
-- `ล้างกราฟ` clears the graph; the next vertex starts again at A. Maximum 26 vertices.
+## Click editing
+- Choose **เพิ่มจุดยอด** and click an empty place on the graph to add a vertex.
+- Choose **สร้างเส้นเชื่อม** and click two different existing vertices to connect them.
+- Vertex labels use A–Z. After **ล้างกราฟ**, the next created vertex starts at A again.
+- Parallel edges are supported; self-loops are not supported.
