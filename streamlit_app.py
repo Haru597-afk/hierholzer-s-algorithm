@@ -10,13 +10,40 @@ st.set_page_config(page_title="Hierholzer's Algorithm", page_icon="🔗", layout
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
-html,body,[class*="css"]{font-family:'Prompt',sans-serif}
-.stApp{background:linear-gradient(135deg,#f4f9fc,#edf7f7)}
-.hero{background:linear-gradient(120deg,#123b5a,#087e83);padding:1.35rem 1.6rem;border-radius:18px;color:white;margin-bottom:1rem}
-.hero h1{color:white;margin:0;font-size:2rem}.hero p{color:#d8f5f2;margin:.35rem 0 0}
-.kpi{background:white;border:1px solid #dbe7ed;border-radius:14px;padding:.85rem 1rem}
-.kpi-label{color:#637c89;font-size:.85rem}.kpi-value{color:#123b5a;font-size:1.8rem;font-weight:700}
-div.stButton>button[kind="primary"]{background:#078b76;border-color:#078b76}
+/* Force readable contrast regardless of Streamlit Cloud's selected theme. */
+html, body, [class*="css"], [data-testid="stAppViewContainer"],
+[data-testid="stMain"], [data-testid="stMarkdownContainer"],
+[data-testid="stWidgetLabel"], .stMarkdown, .stText, p, label, li,
+[data-testid="stCaptionContainer"] {
+  font-family:'Prompt',sans-serif !important;
+  color:#173746 !important;
+}
+.stApp, [data-testid="stAppViewContainer"] {
+  background:linear-gradient(135deg,#f4f9fc,#edf7f7) !important;
+}
+[data-testid="stHeader"] {background:rgba(244,249,252,.96) !important;}
+.hero{background:linear-gradient(120deg,#123b5a,#087e83);padding:1.35rem 1.6rem;border-radius:18px;color:#ffffff !important;margin-bottom:1rem}
+.hero h1{color:#ffffff !important;margin:0;font-size:2rem}.hero p{color:#e7fffb !important;margin:.35rem 0 0}
+.kpi{background:#ffffff;border:1px solid #dbe7ed;border-radius:14px;padding:.85rem 1rem}
+.kpi-label{color:#526b78 !important;font-size:.85rem}.kpi-value{color:#123b5a !important;font-size:1.8rem;font-weight:700}
+/* Inputs, radio options, dropdowns, and buttons */
+input, textarea, [data-baseweb="select"], [data-baseweb="input"],
+[data-baseweb="select"] *, [data-baseweb="input"] *,
+[data-testid="stRadio"] *, [data-testid="stSelectbox"] *,
+[data-testid="stButton"] button, [data-testid="stAlert"] *,
+[data-testid="stInfo"] *, [data-testid="stSuccess"] *,
+[data-testid="stError"] *, [data-testid="stWarning"] * {
+  color:#173746 !important;
+}
+[data-testid="stButton"] button {
+  background:#ffffff !important; border:1px solid #9ab5c1 !important;
+  border-radius:9px !important; font-weight:500 !important;
+}
+div.stButton>button[kind="primary"] {
+  background:#078b76 !important; border-color:#078b76 !important; color:#ffffff !important;
+}
+[data-testid="stAlert"] {background:#ffffff !important;border:1px solid #d3e1e8 !important;}
+[data-testid="stSelectbox"] svg, [data-baseweb="select"] svg {fill:#173746 !important;}
 </style>
 <div class="hero"><h1>◉ Hierholzer's Algorithm</h1><p>เครื่องมือสร้างกราฟและหา Euler Path / Euler Circuit</p></div>
 """, unsafe_allow_html=True)
